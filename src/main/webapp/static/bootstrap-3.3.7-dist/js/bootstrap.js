@@ -432,6 +432,7 @@ if (typeof jQuery === 'undefined') {
 
     this.sliding = true
 
+
     isCycling && this.pause()
 
     if (this.$indicators.length) {
