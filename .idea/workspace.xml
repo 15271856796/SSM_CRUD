@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a4500ba-fb3f-4a91-bce5-081a29c31e0a" name="Default Changelist" comment="" />
+    <list default="true" id="5a4500ba-fb3f-4a91-bce5-081a29c31e0a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/js/bootstrap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="428" column="6" selection-start-line="428" selection-start-column="6" selection-end-line="428" selection-end-column="6" />
+            <state relative-caret-position="118">
+              <caret line="432" column="23" selection-start-line="432" selection-start-column="19" selection-end-line="432" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -679,7 +681,7 @@
       <workItem from="1582516747730" duration="32202000" />
       <workItem from="1582599330177" duration="18409000" />
       <workItem from="1582684528457" duration="1339000" />
-      <workItem from="1582694235170" duration="785000" />
+      <workItem from="1582694235170" duration="1061000" />
     </task>
     <task id="LOCAL-00001" summary="基于SSM的增删改查">
       <created>1582694649455</created>
@@ -688,7 +690,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582694649456</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="基于SSM的增删改查">
+      <created>1582695115173</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582695115173</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -724,12 +733,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227907000" />
+    <option name="totallyTimeSpent" value="228183000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.84463894" visible="true" weight="0.27382752" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.84463894" visible="true" weight="0.27382752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -748,7 +758,7 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.101472996" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.2618658" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32885906" />
@@ -1276,8 +1286,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="428" column="6" selection-start-line="428" selection-start-column="6" selection-end-line="428" selection-end-column="6" />
+        <state relative-caret-position="118">
+          <caret line="432" column="23" selection-start-line="432" selection-start-column="19" selection-end-line="432" selection-end-column="23" />
         </state>
       </provider>
     </entry>
