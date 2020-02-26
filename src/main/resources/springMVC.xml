@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 开启注解扫描 如@Controller等spring的注解,必须创建对象不然怎么执行处理方法呢-->
+    <context:component-scan base-package="com.hdl.controller"/>
+
+    <!-- 视图解析器对象 -->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--前端控制器，哪些静态资源不拦截,不配置这个的话,那么比如说简单的弹窗都实现不了-->
+    <!--  <mvc:resources location="/css/" mapping="/css/**"/>
+      <mvc:resources location="/images/" mapping="/images/**"/>-->
+    <mvc:resources location="/static/" mapping="/static/**"/>
+
+
+    <!--配置自定义类型转换器,前端的数据可以正确转化成Date类型,比如前端字符串"2019/11/20"或者"2019-11-10"都可以正常转化成后端字符串类型-->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.hdl.utils.StringToDate"/>     <!--写自己实现Converter<String, Date>接口的实现类的位置-->
+            </set>
+        </property>
+    </bean>
+
+
+    <!--开启SpringMVC框架注解的支持 如@RequestMapping 并将类型转换器开启-->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+</beans>

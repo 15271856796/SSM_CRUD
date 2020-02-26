@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+     http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+     http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--spring配置的核心点(数据源的配置,与mybatis的整合,事务控制的配置)-->
+
+<!--=============================数据源的配置=============================================================================-->
+
+    <!--指定资源文件位置-->
+    <context:property-placeholder location="classpath:jdbcConfig.properties"/>
+    <!--配置数据源-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+    <!--配置spring扫描的包的位置,除了不扫描controller-->
+    <context:component-scan base-package="com.hdl">
+        <!--扫描除Controller以外的注解-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+<!--=================================mybatis的整合配置================================================================================-->
+
+    <!--配置和Mybatis的整合-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--配置我们上面定义好的数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--指定mybatis的全局配置文件-->
+        <property name="configLocation" value="classpath:mybatisConfig.xml"/>
+        <!--指定mybatis中sql映射文件所在位置，如不指定，则需在pom.xml文件中配置resource标签进行指定-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+
+    <!--扫描所有的dao接口,加入到ioc容器中-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.hdl.mapper"></property>
+    </bean>
+
+
+
+
+    <!--=============================事务控制配置==================================================================================-->
+    <!--配置事务控制-->
+    <!--①先创建一个事务管理器-->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--②配置事务通知的内容,需要用到上面创建的事务管理器-->
+    <tx:advice transaction-manager="txManager" id="MyAdvice">
+        <tx:attributes>
+            <!--所有以find开头的方法-->
+            <tx:method name="find*" read-only="true" propagation="SUPPORTS"/>
+            <!--所有以sel开头的方法-->
+            <tx:method name="sel*" read-only="true" propagation="SUPPORTS"/>
+            <tx:method name="get*" read-only="true" propagation="SUPPORTS"/>
+            <tx:method name="count*" read-only="true" propagation="SUPPORTS"/>
+            <tx:method name="add*" read-only="false" propagation="REQUIRED"/>
+            <tx:method name="save*" read-only="false" propagation="REQUIRED"/>
+            <tx:method name="insert*" read-only="false" propagation="REQUIRED"/>
+            <tx:method name="del*" read-only="false" propagation="REQUIRED"/>
+            <tx:method name="delete*" read-only="false" propagation="REQUIRED"/>
+            <tx:method name="update*" read-only="false" propagation="REQUIRED"/>
+            <tx:method name="upt*" read-only="false" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+    <!--配置aop-->
+    <aop:config>
+        <!--设置切点-->
+        <aop:pointcut id="pt" expression="execution(* com.hdl.services.*.*(..))"/>
+        <aop:advisor advice-ref="MyAdvice" pointcut-ref="pt"/>
+    </aop:config>
+
+
+    <!--配置一个用来进行批量操作的SqlSession-->
+    <bean id="batchSqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <!--此类未提供set方法，只能通过构造方法注入-->
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+        <constructor-arg name="executorType" value="BATCH"/>
+    </bean>
+
+
+
+</beans>
