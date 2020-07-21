@@ -57,6 +57,7 @@
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>编辑</button>
                             <button class="btn btn-danger  btn-sm">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>删除</button>
+
                         </th>
                     </tr>
                 </c:forEach>

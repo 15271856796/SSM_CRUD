@@ -12,6 +12,7 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:contextConfigLocation.xml</param-value>
   </context-param>
+
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
@@ -30,8 +31,6 @@
     <servlet-name>dispatcherServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
-
 
 
 <!--字符编码过滤器,解决接参中文乱码问题,这个过滤器filter一定要放在所有的过滤器前面-->
