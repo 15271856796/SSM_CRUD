@@ -6,16 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a4500ba-fb3f-4a91-bce5-081a29c31e0a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/contextConfigLocation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/contextConfigLocation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-crud.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-crud/static/bootstrap-3.3.7-dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-crud/static/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
-    </list>
+    <list default="true" id="5a4500ba-fb3f-4a91-bce5-081a29c31e0a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +92,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -378,6 +369,7 @@
       <workItem from="1593748930409" duration="80000" />
       <workItem from="1594793669026" duration="1138000" />
       <workItem from="1595324445115" duration="18000" />
+      <workItem from="1595324583526" duration="469000" />
     </task>
     <task id="LOCAL-00001" summary="基于SSM的增删改查">
       <created>1582694649455</created>
@@ -414,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582696005601</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="基于SSM的增删改查">
+      <created>1595324787155</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595324787155</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -457,18 +456,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="基于SSM的增删改查" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="247" y="0" key="CommitChangelistDialog2" timestamp="1595324758600">
+    <state x="247" y="0" key="CommitChangelistDialog2" timestamp="1595324786003">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="247" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1595324758600" />
+    <state x="247" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1595324786003" />
     <state x="422" y="136" key="FileChooserDialogImpl" timestamp="1593748946968">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="422" y="136" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1593748946968" />
-    <state x="142" y="22" key="SettingsEditor" timestamp="1593484846569">
+    <state x="142" y="22" key="SettingsEditor" timestamp="1595325117321">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="142" y="22" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1593484846569" />
+    <state x="142" y="22" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1595325117321" />
+    <state x="233" y="113" key="Vcs.Push.Dialog.v2" timestamp="1595324940665">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="233" y="113" key="Vcs.Push.Dialog.v2/0.0.1280.760@0.0.1280.760" timestamp="1595324940665" />
     <state x="324" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1595324448456">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
